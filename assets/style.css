@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
+body { font-family: 'Tajawal', sans-serif; background: linear-gradient(180deg,#eef2ff 0%,#fefce8 100%); background-attachment: fixed; user-select: none; overflow-x: hidden; }
+.glass-panel { background: rgba(255,255,255,0.93); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10); }
+.btn-bounce { transition: transform 0.2s; }
+.btn-bounce:active { transform: scale(0.95); }
+.brand-strip { background: repeating-linear-gradient(90deg,#facc15 0 40px,#1e3a8a 40px 80px); height: 4px; }
+
+/* رياضيات */
+.m { unicode-bidi: isolate; direction: ltr; }
+.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; line-height: 1.1; margin: 0 2px; font-size: 0.9em; }
+.frac .num { border-bottom: 2px solid currentColor; padding: 0 3px; }
+.frac .den { padding: 0 3px; }
+.q-img { max-height: 260px; max-width: 100%; margin: 0 auto 1rem; border-radius: 12px; border: 2px solid #e0e7ff; background: #fff; object-fit: contain; }
+.q-img-sm { max-height: 150px; max-width: 100%; margin: 8px auto 0; border-radius: 10px; background: #fff; object-fit: contain; }
+
+/* التوصيل */
+.match-item { transition: all 0.3s; }
+.match-item.selected { background-color: #fef08a; border-color: #eab308; transform: scale(1.05); }
+.match-item.matched { background-color: #86efac; border-color: #22c55e; opacity: 0.7; pointer-events: none; }
+.match-item.error { background-color: #fca5a5; border-color: #ef4444; animation: shake 0.5s; }
+
+/* الفقاعات */
+.game-bubble {
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(191,219,254,0.8) 60%, rgba(59,130,246,0.45));
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.8), 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #1e3a8a; text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+.horizontal-target { background-color: white; border: 4px solid; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); }
+
+/* حركة مستمرة بلا وقت محدد: تتكرر حتى يجيب الطالب */
+@keyframes fallDown { from { top: -140px; } to { top: 105%; } }
+@keyframes moveRight { from { left: -140px; } to { left: 105%; } }
+@keyframes moveLeft { from { left: 105%; } to { left: -140px; } }
+.anim-fall { animation: fallDown 16s linear infinite; }
+.anim-right { animation: moveRight 15s linear infinite; }
+.anim-left { animation: moveLeft 15s linear infinite; }
+
+@keyframes shake { 0%,100% {transform: translateX(0);} 25% {transform: translateX(-5px);} 75% {transform: translateX(5px);} }
+.popup-anim { animation: popIn 0.3s ease-out forwards; }
+@keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
+.game-bubble .frac, .horizontal-target .frac { font-size: 1.3em; }
+.game-bubble .m, .horizontal-target .m { white-space: normal; }
+
+/* رموز الشعاع والمستقيم */
+.geo { position: relative; display: inline-block; padding-top: 0.45em; line-height: 1.1; unicode-bidi: isolate; }
+.geo::before { position: absolute; top: -0.15em; left: 0; right: 0; text-align: center; font-size: 0.8em; line-height: 1; letter-spacing: -2px; }
+.ray::before { content: "⟶"; }
+.gline::before { content: "⟷"; }
+
+/* ===== عناصر مستر سيف محمد (بدون صور) ===== */
+.brand-strip { background: repeating-linear-gradient(90deg,#f59e0b 0 40px,#1e3a8a 40px 80px); }
+.logo-badge { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg,#1e3a8a,#4f46e5); color: #fde68a; font-size: 26px; font-weight: 800; box-shadow: 0 4px 12px rgba(30,58,138,.3); border: 2px solid #fcd34d; flex-shrink: 0; }
+.brand-name { line-height: 1.15; }
+.brand-name small { display: block; font-size: 13px; color: #b45309; font-weight: 800; letter-spacing: .5px; }
+.hero-art { position: relative; width: 100%; max-width: 300px; aspect-ratio: 1/1; border-radius: 20px; border: 4px solid #fbbf24;
+  background: radial-gradient(circle at 30% 25%,#6366f1,#1e3a8a 70%); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 12px 30px rgba(30,58,138,.35); overflow: hidden; }
+.hero-art .big { font-size: 64px; font-weight: 800; color: #fde68a; line-height: 1; }
+.hero-art .eq { direction: ltr; font-size: 20px; font-weight: 800; background: rgba(255,255,255,.15); padding: 6px 14px; border-radius: 12px; }
+.hero-art .eq b { color: #fde68a; }
+.hero-art .tag { font-size: 14px; font-weight: 800; color: #c7d2fe; }
+.hero-art::before, .hero-art::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.08); }
+.hero-art::before { width: 160px; height: 160px; top: -50px; left: -50px; }
+.hero-art::after { width: 120px; height: 120px; bottom: -40px; right: -30px; }
+@media (max-width: 767px) { .hero-art { max-width: 240px; } .hero-art .big { font-size: 52px; } }
+.avatar-mini { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg,#1e3a8a,#4f46e5); color: #fde68a; font-weight: 800; border: 2px solid #fbbf24; }
+.lesson-num { width: 64px; height: 64px; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-weight: 800; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,.15); }
+.lesson-num span { font-size: 11px; opacity: .9; }
+.lesson-num b { font-size: 24px; line-height: 1; }
+.tips-box { background: #fffbeb; border: 2px dashed #fbbf24; border-radius: 16px; padding: 16px 18px; }
+.tips-box h4 { color: #b45309; font-weight: 800; font-size: 18px; margin-bottom: 8px; }
+.tips-box li { position: relative; padding-right: 22px; margin-bottom: 6px; font-weight: 700; color: #374151; line-height: 1.8; }
+.tips-box li::before { content: "★"; position: absolute; right: 0; color: #f59e0b; }
+.tips-box .m, .hero-art .eq { white-space: nowrap; }
