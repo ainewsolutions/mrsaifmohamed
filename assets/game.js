@@ -12,7 +12,6 @@ document.getElementById('hdr-teacher').innerText = 'مستر ' + TEACHER.name;
 document.getElementById('branch-name').innerText = meta.order;
 document.getElementById('lesson-title').innerText = meta.title;
 document.getElementById('hdr-lesson').innerText = meta.title;
-document.getElementById('lesson-tips').innerHTML = meta.tips.map(t => '<li>' + fmt(t) + '</li>').join('');
 document.title = meta.order + ' : ' + meta.title + ' | مستر سيف محمد';
 
 (function loadData() {
